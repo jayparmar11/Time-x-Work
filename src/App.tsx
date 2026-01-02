@@ -1,7 +1,10 @@
+import Clock from './components/Clock'
+import './global.css'
+
 export default function App() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">App</h1>
+    <div className="App antialiased">
+      <Clock />
     </div>
   )
 }

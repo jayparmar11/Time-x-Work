@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Time x Work",
+  "version": "1.0.0",
+  "description": "Bold responsive time tracker with rolling animations.",
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "Time x Work"
+  },
+  "permissions": []
+}

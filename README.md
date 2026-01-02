@@ -1,75 +1,72 @@
-# React + TypeScript + Vite
+# Time x Work
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A premium browser extension that displays the current time with elegant rolling animations. Designed for focus and clarity.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **High-Precision Time**: Displays time in `hh:mm:ss:ms` format.
+- **Rolling Digit Animations**: Smooth, CSS-based rolling transitions for hours, minutes, and seconds.
+- **Modern Aesthetics**: Sleek dark mode design with bold, centered typography.
+- **Responsive Layout**: Adjusts seamlessly across different screen sizes.
+- **Performance Optimized**: Uses stateless CSS-based animations for maximum efficiency.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+- **React**: Modern UI framework.
+- **Vite**: Ultra-fast build tool and dev server.
+- **Tailwind CSS**: Utility-first CSS for premium styling.
+- **Vitest**: Fast unit testing framework.
+- **React Testing Library**: For testing components in a way that resembles how they're used.
 
-Note: This will impact Vite dev & build performances.
+## Getting Started
 
-## Expanding the ESLint configuration
+### Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [Node.js](https://nodejs.org/) (v18+)
+- [Bun](https://bun.sh/) (recommended) or npm
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Installation
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+1. Clone the repository:
+   ```bash
+   git clone <repository-url>
+   cd "Time x Work"
+   ```
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+2. Install dependencies:
+   ```bash
+   bun install
+   # or
+   npm install
+   ```
+
+### Development
+
+Run the development server:
+```bash
+bun dev
+# or
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Testing
 
-```js
-import reactDom from 'eslint-plugin-react-dom'
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Run the test suite:
+```bash
+bun test
+# or
+npm run test
 ```
+
+### Building for Production
+
+Build the project for browser extension deployment:
+```bash
+bun run build
+# or
+npm run build
+```
+
+## License
+
+MIT

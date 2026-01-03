@@ -1,4 +1,4 @@
-import Clock from './components/Clock'
+import Clock from './components/clock-css-only/Clock'
 import './global.css'
 
 export default function App() {

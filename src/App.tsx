@@ -3,8 +3,8 @@ import './global.css'
 
 export default function App() {
   return (
-    <div className="App antialiased">
+    <main className="App antialiased">
       <Clock />
-    </div>
+    </main>
   )
 }

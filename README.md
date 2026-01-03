@@ -28,6 +28,7 @@ A premium browser extension that displays the current time with elegant rolling 
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone <repository-url>
    cd "Time x Work"
@@ -43,6 +44,7 @@ A premium browser extension that displays the current time with elegant rolling 
 ### Development
 
 Run the development server:
+
 ```bash
 bun dev
 # or
@@ -52,6 +54,7 @@ npm run dev
 ### Testing
 
 Run the test suite:
+
 ```bash
 bun test
 # or
@@ -61,6 +64,7 @@ npm run test
 ### Building for Production
 
 Build the project for browser extension deployment:
+
 ```bash
 bun run build
 # or

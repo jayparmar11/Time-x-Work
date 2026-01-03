@@ -2,8 +2,8 @@ import React from 'react'
 
 interface DigitStripProps {
   items: string[] | number[]
-  duration: number // in seconds
-  delay: number // in seconds (negative value to start mid-animation)
+  duration: number
+  delay: number
   className?: string
   style?: React.CSSProperties
   type: 'roll' | 'step'
@@ -11,10 +11,8 @@ interface DigitStripProps {
 }
 
 const DigitStrip: React.FC<DigitStripProps> = ({ items, duration, delay, className, style, type, animationName: customName }) => {
-  const finalItems = [...items, items[0]] // Wrap around
+  const finalItems = [...items, items[0]]
   const itemCount = items.length
-
-  // Choose animation name: custom > generated
   const animationName = customName || (type === 'roll' ? `roll-${itemCount}` : `step-${itemCount}`)
 
   return (
@@ -30,10 +28,13 @@ const DigitStrip: React.FC<DigitStripProps> = ({ items, duration, delay, classNa
           animationTimingFunction: type === 'roll' ? 'linear' : `steps(${itemCount})`,
           animationIterationCount: 'infinite',
           animationDelay: `${delay}s`,
+          // PERFORMANCE ADDITIONS:
+          willChange: 'transform',
+          transform: 'translate3d(0,0,0)',
         }}
       >
         {finalItems.map(item => (
-          <div key={item} className="h-[1em] flex items-center justify-center">
+          <div key={`${item}`} className="h-[1em] flex items-center justify-center">
             {item}
           </div>
         ))}

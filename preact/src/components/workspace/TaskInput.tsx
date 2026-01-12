@@ -1,10 +1,10 @@
 import { Plus } from 'lucide-preact'
 import { useState } from 'preact/hooks'
-import { useTaskStore } from '../../store/useTaskStore'
+import { useTaskActions } from '../../store/useTaskStore'
 
 export function TaskInput() {
   const [title, setTitle] = useState('')
-  const addTask = useTaskStore(state => state.addTask)
+  const { addTask } = useTaskActions()
 
   const handleSubmit = (e: Event) => {
     e.preventDefault()

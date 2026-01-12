@@ -1,12 +1,12 @@
 import type { Task } from '../../store/useTaskStore'
 import { Edit2, Trash2 } from 'lucide-preact'
 import { useState } from 'preact/hooks'
-import { useTaskStore } from '../../store/useTaskStore'
+import { useTaskActions, useTaskStore } from '../../store/useTaskStore'
 import { TaskEditModal } from './TaskEditModal'
 
 export function CompletedTaskList() {
   const tasks = useTaskStore(state => state.tasks)
-  const deleteTask = useTaskStore(state => state.deleteTask)
+  const { deleteTask } = useTaskActions()
   const today = new Date().toISOString().split('T')[0]
 
   // Completed Today: duration !== null and date === today

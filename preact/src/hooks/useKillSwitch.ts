@@ -1,8 +1,8 @@
 import { useEffect } from 'preact/hooks'
-import { useTaskStore } from '../store/useTaskStore'
+import { useTaskActions, useTaskStore } from '../store/useTaskStore'
 
 export function useKillSwitch() {
-  const lockVault = useTaskStore(state => state.lockVault)
+  const { lockVault } = useTaskActions()
   const isLocked = useTaskStore(state => state.isLocked)
 
   useEffect(() => {

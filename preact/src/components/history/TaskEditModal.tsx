@@ -1,6 +1,6 @@
 import type { Task } from '../../store/useTaskStore'
 import { useEffect, useState } from 'preact/hooks'
-import { useTaskStore } from '../../store/useTaskStore'
+import { useTaskActions } from '../../store/useTaskStore'
 import { Modal } from '../ui/Modal'
 
 interface TaskEditModalProps {
@@ -10,7 +10,7 @@ interface TaskEditModalProps {
 }
 
 export function TaskEditModal({ isOpen, onClose, task }: TaskEditModalProps) {
-  const updateTask = useTaskStore(state => state.updateTask)
+  const { updateTask } = useTaskActions()
 
   const [title, setTitle] = useState('')
   const [hours, setHours] = useState(0)

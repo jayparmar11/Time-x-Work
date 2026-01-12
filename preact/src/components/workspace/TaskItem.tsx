@@ -1,16 +1,13 @@
 import type { Task } from '../../store/useTaskStore'
 import { CheckCircle, ChevronDown, ChevronRight, Plus, Trash2 } from 'lucide-preact'
 import { useState } from 'preact/hooks'
-import { useTaskStore } from '../../store/useTaskStore'
+import { useTaskActions } from '../../store/useTaskStore'
 
 export function TaskItem({ task }: { task: Task }) {
   const [isExpanded, setIsExpanded] = useState(false)
   const [newSubTask, setNewSubTask] = useState('')
 
-  const deleteTask = useTaskStore(state => state.deleteTask)
-  const addSubTask = useTaskStore(state => state.addSubTask)
-  const deleteSubTask = useTaskStore(state => state.deleteSubTask)
-  const updateTask = useTaskStore(state => state.updateTask)
+  const { deleteTask, addSubTask, deleteSubTask, updateTask } = useTaskActions()
 
   const handleComplete = () => {
     const now = Date.now()

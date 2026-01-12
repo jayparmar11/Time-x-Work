@@ -1,11 +1,11 @@
 import { useState } from 'preact/hooks'
 import { cn } from '../../lib/utils'
-import { useTaskStore } from '../../store/useTaskStore'
+import { useTaskActions, useTaskStore } from '../../store/useTaskStore'
 
 export function LockScreen() {
   const [password, setPassword] = useState('')
   const [isError, setIsError] = useState(false)
-  const unlockVault = useTaskStore(state => state.unlockVault)
+  const { unlockVault } = useTaskActions()
   const isLoading = useTaskStore(state => state.isLoading)
 
   const handleSubmit = async (e: Event) => {

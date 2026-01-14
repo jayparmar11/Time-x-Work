@@ -1,0 +1,31 @@
+# Tasks
+
+- [x] **Phase 1: Setup Core Utilities**
+    - [x] Install necessary dependencies (`clsx`, `tailwind-merge`, `zustand`, `daisyui`).
+    - [x] Create `src/lib/utils.ts` (cn utility).
+    - [x] Create `src/lib/crypto.ts` (AES-GCM encryption/decryption logic).
+- [x] **Phase 2: State Management**
+    - [x] Create `src/store/useTaskStore.ts`.
+    - [x] Implement custom storage engine with encryption.
+    - [x] Implement Zustand store with `persist` middleware.
+- [x] **Phase 3: Layout & Security**
+    - [x] Create `300vh` layout wrapper.
+    - [x] Implement Lock Screen component.
+    - [x] Implement Shake animation for invalid password.
+    - [x] Implement "Kill Switch" (resize listener, devtools detection).
+- [x] **Phase 4: Workspace Section**
+    - [x] Create Sticky Header (Task Input).
+    - [x] Implement "Active Tasks" list (duration === null).
+    - [x] Implement Subtask Accordion (DaisyUI Collapse).
+    - [x] Implement Task Controls (Start, Complete, Delete).
+- [x] **Phase 5: History Section**
+    - [x] Implement "Completed Today" list.
+    - [x] Implement "History" grouped by date.
+    - [x] Create Duration Edit Modal.
+- [x] **Phase 6: Export Feature**
+    - [x] Create Export Modal.
+    - [x] Implement Excel Table template.
+    - [x] Implement Unordered List template.
+- [x] **Phase 7: Polish & Optimization**
+    - [x] Global Auto-Correction (default 1h 0m for legacy tasks).
+    - [x] Final Review and Testing.

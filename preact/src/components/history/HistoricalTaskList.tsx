@@ -55,12 +55,12 @@ export function HistoricalTaskList({ onExportDate }: HistoricalTaskListProps) {
                     <div className="text-xs opacity-60">
                       {task.subTasks.length > 0 && (
                         <ul className="mt-2 space-y-1 pl-2 border-l-2 border-base-content/10 mb-2">
-                            {task.subTasks.map(st => (
-                                <li key={st.id} className="text-sm opacity-80 flex items-center gap-2">
-                                    <span className="w-1 h-1 rounded-full bg-base-content opacity-50"></span>
-                                    {st.title}
-                                </li>
-                            ))}
+                          {task.subTasks.map(st => (
+                            <li key={st.id} className="text-sm opacity-80 flex items-center gap-2">
+                              <span className="w-1 h-1 rounded-full bg-base-content opacity-50"></span>
+                              {st.title}
+                            </li>
+                          ))}
                         </ul>
                       )}
                       {task.duration

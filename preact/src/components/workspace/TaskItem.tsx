@@ -35,7 +35,7 @@ export function TaskItem({ task }: { task: Task }) {
   }
 
   // Format start time
-  const startTimeStr = task.startTime ? new Date(task.startTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ''
+  // const startTimeStr = task.startTime ? new Date(task.startTime).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ''
 
   return (
     <div className="card bg-zinc-800 shadow-sm border border-zinc-700">

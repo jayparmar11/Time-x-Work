@@ -15,7 +15,7 @@ export function TaskEditModal({ isOpen, onClose, task }: TaskEditModalProps) {
   const [title, setTitle] = useState('')
   const [hours, setHours] = useState(0)
   const [minutes, setMinutes] = useState(0)
-  
+
   const [subTasks, setSubTasks] = useState<{ id: string, title: string }[]>([])
   const [newSubTask, setNewSubTask] = useState('')
 
@@ -29,14 +29,15 @@ export function TaskEditModal({ isOpen, onClose, task }: TaskEditModalProps) {
   }, [task])
 
   const handleAddSubTask = (e: Event) => {
-    e.preventDefault();
-    if (!newSubTask.trim()) return;
-    setSubTasks([...subTasks, { id: crypto.randomUUID(), title: newSubTask }]);
-    setNewSubTask('');
+    e.preventDefault()
+    if (!newSubTask.trim())
+      return
+    setSubTasks([...subTasks, { id: crypto.randomUUID(), title: newSubTask }])
+    setNewSubTask('')
   }
 
   const handleDeleteSubTask = (id: string) => {
-    setSubTasks(subTasks.filter(st => st.id !== id));
+    setSubTasks(subTasks.filter(st => st.id !== id))
   }
 
   const handleSave = () => {
@@ -45,7 +46,7 @@ export function TaskEditModal({ isOpen, onClose, task }: TaskEditModalProps) {
     updateTask(task.id, {
       title,
       duration: { hours, minutes },
-      subTasks
+      subTasks,
     })
     onClose()
   }
@@ -104,37 +105,37 @@ export function TaskEditModal({ isOpen, onClose, task }: TaskEditModalProps) {
         </div>
 
         <div className="form-control">
-            <label className="label">
-                <span className="label-text">Subtasks</span>
-            </label>
-            <ul className="space-y-2 mb-2">
-                {subTasks.map(st => (
-                    <li key={st.id} className="flex justify-between items-center bg-base-200 p-2 rounded">
-                        <span>{st.title}</span>
-                        <button onClick={() => handleDeleteSubTask(st.id)} className="btn btn-ghost btn-xs text-error">
-                             ×
-                        </button>
-                    </li>
-                ))}
-            </ul>
-            <div className="flex gap-2">
-                <input 
-                    type="text" 
-                    className="input input-bordered w-full" 
-                    placeholder="Add subtask..."
-                    value={newSubTask}
-                    onInput={(e) => setNewSubTask(e.currentTarget.value)}
-                    onKeyDown={(e) => {
-                        if (e.key === 'Enter') {
-                            e.preventDefault();
-                            handleAddSubTask(e);
-                        }
-                    }}
-                />
-                <button onClick={handleAddSubTask} className="btn btn-square">
-                    +
+          <label className="label">
+            <span className="label-text">Subtasks</span>
+          </label>
+          <ul className="space-y-2 mb-2">
+            {subTasks.map(st => (
+              <li key={st.id} className="flex justify-between items-center bg-base-200 p-2 rounded">
+                <span>{st.title}</span>
+                <button onClick={() => handleDeleteSubTask(st.id)} className="btn btn-ghost btn-xs text-error">
+                  ×
                 </button>
-            </div>
+              </li>
+            ))}
+          </ul>
+          <div className="flex gap-2">
+            <input
+              type="text"
+              className="input input-bordered w-full"
+              placeholder="Add subtask..."
+              value={newSubTask}
+              onInput={e => setNewSubTask(e.currentTarget.value)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault()
+                  handleAddSubTask(e)
+                }
+              }}
+            />
+            <button onClick={handleAddSubTask} className="btn btn-square">
+              +
+            </button>
+          </div>
         </div>
 
         <div className="modal-action">

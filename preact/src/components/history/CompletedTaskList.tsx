@@ -29,10 +29,10 @@ export function CompletedTaskList() {
                 {task.subTasks.length > 0 && (
                   <ul className="mt-2 space-y-1 pl-2 border-l-2 border-base-content/10">
                     {task.subTasks.map(st => (
-                        <li key={st.id} className="text-sm opacity-80 flex items-center gap-2">
-                             <span className="w-1 h-1 rounded-full bg-base-content opacity-50"></span>
-                             {st.title}
-                        </li>
+                      <li key={st.id} className="text-sm opacity-80 flex items-center gap-2">
+                        <span className="w-1 h-1 rounded-full bg-base-content opacity-50"></span>
+                        {st.title}
+                      </li>
                     ))}
                   </ul>
                 )}

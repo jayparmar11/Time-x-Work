@@ -70,7 +70,7 @@ const storage: StateStorage = {
 
 export const useTaskStore = create<TaskState>()(
   persist(
-    (set, get) => ({
+    set => ({
       tasks: [],
       isLocked: true,
       isLoading: false,

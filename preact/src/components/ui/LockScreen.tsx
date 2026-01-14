@@ -40,7 +40,6 @@ export function LockScreen() {
             )}
             value={password}
             onInput={e => setPassword(e.currentTarget.value)}
-            autoFocus
           />
           <button
             type="submit"

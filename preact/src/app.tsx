@@ -37,12 +37,6 @@ export function App() {
         <div className="scale-150">
           <Clock />
         </div>
-        <div className="absolute bottom-10 animate-bounce">
-          <span className="opacity-50 text-xs">
-            ▼ Scroll to
-            {isLocked ? 'Unlock' : 'Work'}
-          </span>
-        </div>
       </div>
 
       {/* Section 2: Workspace or Lock Screen */}
